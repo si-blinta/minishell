@@ -1,0 +1,23 @@
+#-------------------------------------------------------------------------------------------
+# Exemples de commande pouvant être executées avec le minishell (depuis la racine du projet)
+#-------------------------------------------------------------------------------------------
+
+Commande :
+    $ cat < ./Makefile | head -7 | tail -1 1> ./out; cat ./out; rm ./out
+Sortie :
+    objects := builtin.o main.o parser.o cmd.o
+
+Commande :
+    $ echo -n First- && echo -n Middle- || echo -n Optional- ; echo Last
+Sortie :
+    First-Middle-Last
+
+Commande :
+    $ sleep 2 &; sleep 3 &
+Sortie :
+    [1] 9115
+    [2] 9116
+(au bout de 2 secondes)
+    [1]   Fini (status = 0)           sleep 2 
+(au bout de 3 secondes)
+    [2]   Fini (status = 0)           sleep 3
